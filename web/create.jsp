@@ -1,0 +1,117 @@
+<%-- 
+    Document   : create
+    Created on : Jun 8, 2023, 3:33:35 PM
+    Author     : Min
+--%>
+
+<%@page import="sample.user.UserError"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup Page</title>
+        <link rel="stylesheet" href="./css/styleLogin.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        
+        <%
+            UserError userError = (UserError) request.getAttribute("USER_ERROR");
+            if (userError == null) userError = new UserError();
+            String error = (String) request.getAttribute("ERROR");
+            if (error == null) error = "";
+            %>
+
+        <header class="header">
+            <nav class="navbar">
+                <a href="homee.html">Home</a>
+                <a href="MainController?action=ShoppingPage">Products</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <form action="#" class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit"><i class='bx bx-search'></i></button>
+            </form>
+        </header>
+
+        <div class="background"></div>
+        <div class="container">
+            <div class="content">
+                <h2 class="logo"><i class='bx bxs-piano'></i>PhucLoc</h2>
+
+                <div class="text-sci">
+                    <h2>Welcome!<br><span>To Our New Website.</span></h2>
+
+                    <p>The piano is a versatile and widely recognized musical instrument that produces sound by striking strings with hammers. It is played by pressing keys on a keyboard, which in turn activates the corresponding hammers to strike the strings. The piano's design allows for a range of dynamics, from soft and gentle notes to powerful and resonant sounds.</p>
+
+                    <div class="social-icons">
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                        <a href="#"><i class='bx bxl-instagram' ></i></a>
+                        <a href="#"><i class='bx bxl-gmail' ></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logreg-box">
+                <div class="form-box login">
+                    <form action="MainController" method="POST">
+                        <h2>Sign Up</h2>
+                        
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bx-user-circle'></i></span>
+                            <input type="text" name="userID" required="">${requestScope.USER_ERROR.userIDError}
+                            <label>User ID</label>
+                        </div>
+                        
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bx-rename'></i></span>
+                            <input type="text" name="fullName" required="">${requestScope.USER_ERROR.fullNameError}
+                            <label>Name</label>
+                        </div>
+                        
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-user-pin'></i></span>
+                            <input type="text" name="roleID" value="US" readonly="">
+                            <label></label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bx-lock-alt' ></i></span>
+                            <input type="password" name="password" required="">
+                            <label>Password</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bx-lock-alt'></i></span>
+                            <input type="password" name="confirm" required="">${requestScope.USER_ERROR.confirmError}
+                            <label>Confirm</label>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label><input type="checkbox"> I agree to the terms & conditions</label>
+                        </div>
+
+                        <button type="submit" name="action" value="Create" class="btn">Sign Up</button>
+                        
+                        ${requestScope.ERROR}
+                        
+                        <div class="login-register">
+                            <p>Already have an account? <a href="login.jsp" class="login-link">Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+                        <script src="./js/jsLogin.js"></script>
+    </body>
+</html>

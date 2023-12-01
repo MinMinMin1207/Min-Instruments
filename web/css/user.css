@@ -1,0 +1,334 @@
+/* http://m...content-available-to-author-only...b.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* CSS */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffffffcd;
+}
+
+/* Common */
+
+.container {
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#logo {
+    color: #000;
+}
+
+.name,
+span {
+    user-select: none;
+}
+
+.cart {
+    color: #000;
+}
+
+#viewcart{
+    position: relative;
+}
+
+#viewcart::before {
+    position: absolute;
+    display: none;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "View cart";
+    width: max-content;
+    background: rgba(204, 204, 204, 1);
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+#viewcart:hover::before{
+    display: inline-block;
+}
+
+#addcart{
+    position: relative;
+}
+
+#addcart::before {
+    position: absolute;
+    display: none;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "Add cart";
+    width: max-content;
+    background: rgba(204, 204, 204, 1);
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+#addcart:hover::before{
+    display: inline-block;
+}
+
+/* Header ========== */
+#header {
+    padding: 25px 0;
+    border-bottom: 1px solid #000;
+    font-size: 20px;
+}
+
+#header .container {
+    display: flex;
+    align-items: center;
+}
+
+.header-cart {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-cart {
+    width: 30px;
+    height: 30px;
+}
+
+/*LogOut =============== */
+
+#logout {
+}
+
+#logout input{
+    font-size: 1rem;
+}
+
+#addcart{
+    position: relative;
+}
+
+.logout {
+    position: relative;
+    cursor: pointer;
+}
+
+.logout::before {
+    position: absolute;
+    display: none;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "Log Out";
+    width: max-content;
+    background: rgba(204, 204, 204, 1);
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+.logout:hover::before{
+    display: inline-block;
+
+}
+
+.logout:hover {
+
+}
+
+/* Body ================ */
+
+#body {
+    margin-top: 10px;
+}
+
+/* List Product =========== */
+
+.list-products {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+/* Product =========== */
+
+.product {
+    width: 200px;
+    background: #fff;
+    box-shadow: 1px 1px 10px 1px #ccc;
+}
+
+.product .img-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.product .img-product img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product .img-product:hover img {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.info-product {
+    padding: 5px 6px 10px 8px;
+}
+
+.name-product {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.product-price {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
